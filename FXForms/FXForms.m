@@ -2134,6 +2134,12 @@ static void FXFormPreprocessFieldDictionary(NSMutableDictionary *dictionary)
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //forward to delegate
+    if ([self.delegate respondsToSelector:_cmd])
+    {
+        [self.delegate tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
+    }
+    
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         [tableView beginUpdates];

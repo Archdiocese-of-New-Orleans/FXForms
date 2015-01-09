@@ -133,7 +133,7 @@ UIKIT_EXTERN NSString *const FXFormFieldTypeImage; //image
 #pragma mark Controllers
 
 
-@protocol FXFormControllerDelegate <UITableViewDelegate>
+@protocol FXFormControllerDelegate <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
